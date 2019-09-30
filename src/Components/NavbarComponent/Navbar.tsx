@@ -10,16 +10,17 @@ import {
     DropdownToggle,
     DropdownMenu,
     DropdownItem } from 'reactstrap';
+import ReactPath from "../../ReactPath/ReactPath";
 
 export default class NavbarComponent extends React.Component {
     render() {
         return (
             <div>
                 <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">BackStage</NavbarBrand>
+                    <NavbarBrand href={ReactPath.HOME}>BackStage</NavbarBrand>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
+                                <NavLink href={ReactPath.QUERY}>Query</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>

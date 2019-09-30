@@ -2,7 +2,7 @@ import Navbar from "../Components/NavbarComponent/Navbar";
 
 import React from 'react';
 const layoutStyle = {
-    margin: "0 auto",
+    margin: 0,
     padding: 0,
 };
 
