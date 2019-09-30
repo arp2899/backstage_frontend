@@ -1,5 +1,5 @@
 import Navbar from "../Components/NavbarComponent/Navbar";
-import "../scss/main.scss";
+
 import React from 'react';
 const layoutStyle = {
     margin: "0 auto",

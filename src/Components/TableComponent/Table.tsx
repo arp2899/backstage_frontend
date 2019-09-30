@@ -1,9 +1,11 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import Layout from "../../layout/layout";
 
 export default class TableComponent extends React.Component {
     render() {
         return (
+            <Layout>
             <Table>
                 <thead>
                 <tr>
@@ -34,6 +36,7 @@ export default class TableComponent extends React.Component {
                 </tr>
                 </tbody>
             </Table>
+            </Layout>
         );
     }
 }
