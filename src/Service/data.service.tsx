@@ -1,16 +1,30 @@
-import * as faker from 'faker';
+import Axios from 'axios'
+import {toast} from "react-toastify";
+const BASE_URL = 'http://localhost:8000/api/v1/bscore'
 
 export class DataService {
 
-    static async getData(n: number){
-        let data = [];
-        for(let i=0;i<n;i++){
-            let dateTime = faker.date.recent(50);
-            let name = faker.name.firstName();
-            let value = faker.random.number();
-            let occurrences = faker.random.number(40);
-            data.push({dateTime,name,value,occurrences});
+    static async getDifferenceData(n: number) {
+        try {
+            const res = await Axios.get(`${BASE_URL}/difference?number=${n}`);
+            return res.data.data;
+        }catch (e) {
+            if (e.response.status === 400 && e.response.data.message)
+                toast.error(e.response.data.message);
+            else toast.error('Something went wrong');
+            return null;
         }
-        return data;
+    }
+
+    static async getPythagoreanData(a: number, b: number, c: number) {
+        try {
+            const res = await Axios.get(`${BASE_URL}/pythagorean-triplets?a=${a}&b=${b}&c=${c}`);
+            return res.data.data;
+        }catch (e) {
+            if (e.response.status === 400 && e.response.data.message)
+                toast.error(e.response.data.message);
+            else toast.error('Something went wrong');
+            return null;
+        }
     }
 }
